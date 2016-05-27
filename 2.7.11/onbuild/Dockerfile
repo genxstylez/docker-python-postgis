@@ -26,7 +26,7 @@ RUN             apk --no-cache add \
 
 
 RUN             apk update && \
-		apk add --virtual builddeps \
+		apk --no-cache add --virtual .builddeps \
 		    libtool \
 		    autoconf \
 		    automake \
