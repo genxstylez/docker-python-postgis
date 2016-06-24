@@ -1,5 +1,5 @@
-FROM index.alauda.cn/library/alpine
-MAINTAINER Sam Liu <genxstylez@gmail.com>
+FROM 		index.alauda.cn/library/alpine:edge
+MAINTAINER 	Sam Liu <genxstylez@gmail.com>
 
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
