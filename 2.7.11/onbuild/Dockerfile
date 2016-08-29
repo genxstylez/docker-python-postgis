@@ -1,10 +1,10 @@
-FROM alpine:edge
+FROM alpine:3.4
 MAINTAINER Sam Liu <genxstylez@gmail.com>
 
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV             LANG C.UTF-8
-ENV             PYTHON_VERSION 2.7.11
+ENV             PYTHON_VERSION 2.7.12
 ENV             PYTHONUNBUFFERED True
 ENV             PIP_NO_CACHE_DIR off
 ENV             PIP_DISABLE_PIP_VERSION_CHECK on
@@ -17,7 +17,7 @@ ENV             PYTHON_PIP_VERSION 8.1.2
 
 
 RUN             apk --no-cache add \
-                    python=$PYTHON_VERSION-r3 \
+                    python=$PYTHON_VERSION-r0 \
                     curl && \
 
                 python -m ensurepip --default-pip && \
@@ -31,7 +31,7 @@ RUN             apk update && \
 		    autoconf \
 		    automake \
                     build-base \
-                    python-dev=$PYTHON_VERSION-r3 \
+                    python-dev=$PYTHON_VERSION-r0 \
                     openssl-dev \
                     libffi-dev \
                     zlib-dev  \
